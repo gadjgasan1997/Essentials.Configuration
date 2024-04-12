@@ -9,7 +9,7 @@
 
     <PropertyGroup>
         <PackageId>Essentials.Configuration</PackageId>
-        <Version>1.0.0.0</Version>
+        <Version>1.1.0.0</Version>
         <Authors>Gadzhinskiy</Authors>
         <Company>Gadzhinskiy</Company>
         <Product>Essentials.Configuration</Product>
@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Essentials.Logging" Version="1.1.0" />
     </ItemGroup>
 
 </Project>

@@ -19,12 +19,14 @@ public static class WebApplicationBuilderExtensions
     /// <param name="builder">Билдер приложения</param>
     /// <param name="configureServicesAction">Делегат регистрации сервисов</param>
     /// <param name="initConfigurationAction">Делегат инициализации конфигурации</param>
+    /// <param name="postConfigurationAction">Делегат дополнительной настройки конфигурации</param>
     /// <param name="loggingConfigurationAction">Делегат конфигурации логирования</param>
     /// <returns></returns>
     public static WebApplicationBuilder ConfigureDefault(
         this WebApplicationBuilder builder,
         Action<HostBuilderContext, IServiceCollection>? configureServicesAction = null,
         Action<ConfigurationManager>? initConfigurationAction = null,
+        Action<ConfigurationManager>? postConfigurationAction = null,
         Action<ILoggingBuilder>? loggingConfigurationAction = null)
     {
         // Прописывание делегатов по-умолчанию
@@ -43,6 +45,7 @@ public static class WebApplicationBuilderExtensions
 
         // Вызов делегатов конфигурации
         initConfigurationAction(builder.Configuration);
+        postConfigurationAction?.Invoke(builder.Configuration);
         
         loggingConfigurationAction(builder.Logging);
         

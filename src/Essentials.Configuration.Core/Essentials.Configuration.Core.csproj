@@ -9,7 +9,7 @@
 
     <PropertyGroup>
         <PackageId>Essentials.Configuration</PackageId>
-        <Version>1.2.1.0</Version>
+        <Version>1.2.2.0</Version>
         <Authors>Gadzhinskiy</Authors>
         <Company>Gadzhinskiy</Company>
         <Product>Essentials.Configuration</Product>
@@ -20,6 +20,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="App.Metrics.App.All" Version="4.3.0" />
+      <PackageReference Include="App.Metrics.AspNetCore.Mvc" Version="4.3.0" />
+      <PackageReference Include="App.Metrics.Formatters.Prometheus" Version="4.3.0" />
       <PackageReference Include="Essentials.Logging" Version="1.1.0" />
     </ItemGroup>
 
